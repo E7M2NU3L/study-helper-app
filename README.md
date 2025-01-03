@@ -1,50 +1,113 @@
-# React + TypeScript + Vite
+```markdown
+# Bot Creation and Study Material Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a React-based application for creating and managing bots, with a feature to upload and manage study materials. It leverages modern frameworks and libraries for a seamless, scalable, and efficient user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Bot Creation**: Create custom bots with a name and description.
+- **File Management**: Upload, view, delete, and manage multiple study materials with size validation.
+- **Responsive UI**: Sleek and responsive design built with ShadCN UI and Tailwind CSS.
+- **Animation**: Smooth animations powered by Framer Motion.
+- **State Management**: Efficient state handling using Redux and Redux Persist.
+- **Data Fetching**: Optimized API interactions using React Query.
+- **Backend Integration**: Uses Appwrite for backend services and data storage.
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend**: [Vite](https://vitejs.dev/) with React
+- **State Management**: [Redux](https://redux.js.org/) and [Redux Persist](https://github.com/rt2zz/redux-persist)
+- **API and Data Fetching**: [React Query](https://tanstack.com/query/latest)
+- **UI Components**: [ShadCN UI](https://ui.shadcn.dev/) and [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Backend**: [Appwrite](https://appwrite.io/)
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Follow these steps to set up and run the application locally:
+
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the root directory and add the necessary environment variables for Appwrite:
+   ```env
+   VITE_APPWRITE_ENDPOINT=<your-appwrite-endpoint>
+   VITE_APPWRITE_PROJECT_ID=<your-appwrite-project-id>
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:5173`.
+
+## Usage
+
+### 1. Bot Creation
+- Enter a bot name and optional description in the form.
+- Upload one or multiple study material files.
+- View the uploaded files below the form.
+- Add or delete files as needed before submitting.
+
+### 2. File Management
+- The file section displays the list of uploaded study materials.
+- Each file has options to delete or replace it.
+
+### 3. Submission
+- Click on the "Create Bot" button to submit the form.
+- Ensure that all fields meet the validation criteria.
+
+## Folder Structure
+
+```plaintext
+src/
+├── components/      # Reusable UI components
+├── features/        # Redux slices and state management logic
+├── hooks/           # Custom React hooks
+├── services/        # API calls and integrations (React Query/Appwrite)
+├── pages/           # Page components for routing
+├── styles/          # Tailwind CSS styles and configurations
+├── App.tsx          # Main application entry point
+└── main.tsx         # Vite entry point
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Key Libraries and Their Usage
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Vite**: For a fast and optimized development experience.
+- **Appwrite**: Handles backend services like authentication, database, and storage.
+- **React Query**: Manages API calls and caching for a seamless user experience.
+- **Redux & Redux Persist**: State management with persistent storage.
+- **ShadCN UI & Tailwind CSS**: For building a beautiful and responsive interface.
+- **Framer Motion**: Adds smooth animations and transitions.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## Contribution
+
+Contributions are welcome! To contribute:
+
+1. Fork the repository.
+2. Create a new branch (`feature/your-feature-name`).
+3. Commit your changes.
+4. Push to the branch.
+5. Open a Pull Request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Acknowledgments
+
+- [Appwrite](https://appwrite.io/) for backend services.
+- [ShadCN UI](https://ui.shadcn.dev/) for design inspiration.
+- [Vite](https://vitejs.dev/) for fast build tooling.
+- [Framer Motion](https://www.framer.com/motion/) for animations.
+
+---
