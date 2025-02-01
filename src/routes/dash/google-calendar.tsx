@@ -7,14 +7,7 @@ import { LogOutIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const GoogleCalendar = () => {
-  // Configuration details
-  const CLIENT_ID =
-    "318568079115-ralmttcf6hcinui634afh3jru9e1fu5k.apps.googleusercontent.com";
-  const API_KEY = "AIzaSyAude6B8HkxRgZTzjXLEsp-UIEHA_DgbIM";
-  const DISCOVERY_DOC =
-    "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest";
-  const SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
-
+  
   // Token client type
   let tokenClient: {
     callback: (resp: { error?: any }) => Promise<void>;
