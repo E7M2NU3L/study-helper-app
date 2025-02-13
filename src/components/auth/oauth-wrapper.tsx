@@ -2,16 +2,17 @@ import { Button } from '../ui/button'
 import { Separator } from "@/components/ui/separator"
 import GoogleIcon from './google-icon'
 import { AppErrClient } from '@/utils/app-err'
-import { LoginOauthgoogle } from '@/api/auth'
 import { useState } from 'react'
 import { Loader } from 'lucide-react'
+import { useAuth } from '@/hooks/use-auth'
 
 const OauthWrapper = () => {
     const [loading, setLoading] = useState<boolean>(false);
+    const {loginwithOauthMutation} = useAuth();
     const handleGoogleSignIn = async () => {
         try {
             setLoading(true);
-            await LoginOauthgoogle();
+            await loginwithOauthMutation.mutateAsync();
         } catch (error) {
             AppErrClient(error);
         } finally {

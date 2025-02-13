@@ -10,6 +10,8 @@ const SetRole = () => {
     const {fetchUser : session} = useAuth();
     const dispatch = useDispatch();
 
+    console.log(session);
+
     useEffect(() => {
         dispatch(login(session.data));
     }, [

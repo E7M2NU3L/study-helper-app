@@ -20,7 +20,6 @@ import Schedules from "./routes/dash/schedules"
 import Community from "./routes/dash/community"
 
 function App() {
-
   return (
     <>
       <BrowserRouter>

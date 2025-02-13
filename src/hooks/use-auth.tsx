@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { GetCurrentSession, LoginUser, LogoutUser } from "@/api/auth";
+import { GetCurrentSession, LoginOauthgoogle, LoginUser, LogoutUser } from "@/api/auth";
 import { LoginUserTypes } from "@/types/auth-types";
 
 export const useAuth = () => {
@@ -20,6 +20,16 @@ export const useAuth = () => {
         }
     });
 
+    const loginwithOauthMutation = useMutation({
+        mutationFn : LoginOauthgoogle,
+        mutationKey : ['google-auth'],
+        onSuccess : () => {
+            queryClient.invalidateQueries({
+                queryKey : ['fetch-user']
+            })
+        }
+    });
+
     const logoutMutation = useMutation({
         mutationFn: LogoutUser,
         mutationKey: ['logout-user'],
@@ -29,5 +39,6 @@ export const useAuth = () => {
         fetchUser,
         loginMutation,
         logoutMutation,
+        loginwithOauthMutation
     };
 };

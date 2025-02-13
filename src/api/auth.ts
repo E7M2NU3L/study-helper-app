@@ -56,7 +56,7 @@ export async function LoginOauthgoogle() {
     try {
         await account.createOAuth2Session(
             OAuthProvider.Google,
-            `${AppConstants.endpoint}/set-role`,
+            `${AppConstants.endpoint}/set-state`,
             `${AppConstants.endpoint}/sign-up`
         )
     } catch (error) {

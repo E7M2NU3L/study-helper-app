@@ -8,6 +8,7 @@ import { ID, Query } from "appwrite";
 export async function CreateBots(values : CreateBotServerTypes) : Promise<string | undefined> {    
     try {
         const appwriteFileURl : string[] = [];
+        console.log("payload in api: \n", values);
         values.fileUrl.forEach(async function (file) {
             const fileURl = await uploadDocuments(file);
             if (!fileURl) {
@@ -16,6 +17,7 @@ export async function CreateBots(values : CreateBotServerTypes) : Promise<string
 
             appwriteFileURl.push(fileURl);
         });
+        console.log(appwriteFileURl);
 
         const payload = {
             title : values.title,
@@ -23,6 +25,7 @@ export async function CreateBots(values : CreateBotServerTypes) : Promise<string
             userId : values.userId,
             fileUrl : appwriteFileURl
         };
+        console.log("payload converted:\n", payload);
 
         const promise = await database.createDocument(
             appwriteConstants.databaseId,
@@ -30,6 +33,7 @@ export async function CreateBots(values : CreateBotServerTypes) : Promise<string
             ID.unique(),
             payload
         );
+        console.log(promise);
 
         if (!promise.$id) {
             throw new Error("Bot not Created properly");

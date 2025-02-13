@@ -10,6 +10,7 @@ export async function uploadDocuments(file : File) : Promise<string | undefined>
             ID.unique(),
             file
         );
+        console.log("File:\n", file);
 
         if (!promise.$id) {
             throw new Error("Document not uploaded");
@@ -19,6 +20,7 @@ export async function uploadDocuments(file : File) : Promise<string | undefined>
             appwriteConstants.documentBucket,
             promise.$id
         );
+        console.log("File URL: ", fileUrl);
 
         return fileUrl; 
     } catch (error) {
