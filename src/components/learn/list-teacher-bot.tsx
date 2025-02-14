@@ -7,12 +7,10 @@ import { Link } from "react-router-dom";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { avatars } from "@/config/appwrite";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
-import { useEffect } from "react";
-import { toast } from "@/hooks/use-toast";
 import { Skeleton } from "../ui/skeleton";
 
 const ListTeacherBot = () => {
-    const {data, isError, isLoading} = useBots();
+    const {data, isLoading} = useBots();
     console.log(data);
 
     if (isLoading) {
@@ -54,16 +52,6 @@ const ListTeacherBot = () => {
         </Card>
         )
     };
-
-    useEffect(() => {
-        if (isError) {
-            toast({
-                title : "Failed",
-                description : "Fetching Failed",
-                variant : "destructive"
-            })
-        }
-    }, [isError])
 
     return (
     <main className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">

@@ -35,6 +35,11 @@ const GoogleCalendar = () => {
 
   let windowinstance = window as any
 
+  const CLIENT_ID = import.meta.env.VITE_CLIENT_ID;
+  const API_KEY = import.meta.env.VITE_API_KEY;
+  const DISCOVERY_DOC = import.meta.env.VITE_DISCOVERY_DOC;
+  const SCOPES = import.meta.env.VITE_SCOPES;
+
   // Initialize Google API client
   const initializeGapiClient = async () => {
     await windowinstance.gapi.client.init({
