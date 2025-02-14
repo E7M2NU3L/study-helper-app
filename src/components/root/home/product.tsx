@@ -32,7 +32,7 @@ const Product = () => {
                 </main>
             </section>
         </main>
-        <section className="w-full min-h-[70vh]">
+        <section className="w-full md:min-h-[70vh]">
             <img src="/product.png" alt="product" className="w-full h-full object-cover shadow-2xl rounded-xl shadow-primary" />
         </section>
     </div>
