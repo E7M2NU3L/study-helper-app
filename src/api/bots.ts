@@ -51,7 +51,7 @@ export async function updateBots(values : {
     description : string;
 }) : Promise<string | undefined> {
     try {
-        
+        console.log(values);
         return
     } catch (error) {
         AppErrServer(error);
