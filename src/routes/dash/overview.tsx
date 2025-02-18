@@ -26,12 +26,12 @@ const Overview = () => {
   })
   return (
     <div className="w-full p-4">
-        <main className="flex justify-between items-center">
+        <main className="flex justify-start md:justify-between items-start md:items-center flex-col md:flex-row gap-4 flex-wrap">
             <main className="flex flex-col gap-1">
                 <h1 className="text-3xl font-semibold tracking-tight text-foreground">
                     Overview Insights
                 </h1>
-                <p className="text-muted-foreground text-sm font-light tracking-tight leading-tight">
+                <p className="text-muted-foreground text-sm font-light tracking-tight leading-tight whitespace-normal">
                     view your performance, notifications and your overall usage in the app.
                 </p>
             </main>
@@ -62,11 +62,11 @@ const Overview = () => {
         
 
           <main className="flex-1 py-6 px-4 md:px-6">
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
           <MetricCards />
         </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-          <Card className="col-span-4">
+        <div className="mt-4 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
+          <Card className="col-span-1 md:col-span-4">
             <CardHeader>
               <CardTitle>Performance Over Time</CardTitle>
             </CardHeader>
@@ -74,7 +74,7 @@ const Overview = () => {
               <PerformanceGraph />
             </CardContent>
           </Card>
-          <Card className="col-span-3">
+          <Card className="col-span-1 md:col-span-3">
             <CardHeader>
               <CardTitle>Tasks Comparison</CardTitle>
             </CardHeader>
@@ -83,8 +83,8 @@ const Overview = () => {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-7">
-          <Card className="col-span-2">
+        <div className="mt-4 grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-7">
+          <Card className="col-span-1 md:col-span-2">
             <CardHeader>
               <CardTitle>Skill Levels</CardTitle>
             </CardHeader>
@@ -92,7 +92,7 @@ const Overview = () => {
               <SkillRadarChart />
             </CardContent>
           </Card>
-          <Card className="col-span-2">
+          <Card className="col-span-1 md:col-span-2">
             <CardHeader>
               <CardTitle>Goal Progress</CardTitle>
             </CardHeader>
@@ -100,7 +100,7 @@ const Overview = () => {
               <ProgressTracker />
             </CardContent>
           </Card>
-          <Card className="col-span-3">
+          <Card className="col-span-1 md:col-span-3">
             <CardHeader>
               <CardTitle>Recent Activity</CardTitle>
             </CardHeader>
@@ -109,7 +109,7 @@ const Overview = () => {
             </CardContent>
           </Card>
         </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="mt-4 grid gap-4 grid-cols-1 md:grid-cols-2">
           <Card>
             <CardHeader>
               <CardTitle>Notifications</CardTitle>

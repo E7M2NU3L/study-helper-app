@@ -5,7 +5,7 @@ import { Crown, Plus } from "lucide-react"
 const Community = () => {
   return (
     <div className="w-full p-4">
-        <main className="flex justify-between items-center">
+        <main className="flex justify-start md:justify-between items-start md:items-center flex-col md:flex-row gap-4 flex-wrap">
             <main className="flex flex-col gap-1">
                 <h1 className="text-3xl font-semibold tracking-tight text-foreground">
                     Communities

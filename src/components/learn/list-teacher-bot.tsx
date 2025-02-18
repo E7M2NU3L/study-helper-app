@@ -15,41 +15,43 @@ const ListTeacherBot = () => {
 
     if (isLoading) {
         return (
-            <Card>
-            <CardHeader className="flex flex-col gap-1">
-                <CardTitle>
-                    <Skeleton className="w-[14vh] h-5" />
-                </CardTitle>
-                <CardDescription>
-                    <Skeleton className="w-full h-7" />
-                </CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-row gap-4 items-center">
-                <CardDescription>
-                    <Skeleton className="w-[8vh] h-5" />
-                </CardDescription>
-                <div className="flex flex-row -space-x-1 items-center">
-                    <Skeleton className="w-10 h-10 rounded-full" />
-                </div>
-            </CardContent>
-            <CardFooter className="flex justify-between items-center">
-                <p className="text-xs font-light text-muted-foreground tracking-tight">
-                    <Skeleton className="w-[8vh] h-3" />
-                </p>
+            <main>
+                <Card className="max-w-sm">
+                    <CardHeader className="flex flex-col gap-1">
+                        <CardTitle>
+                            <Skeleton className="w-[14vh] h-5" />
+                        </CardTitle>
+                        <CardDescription>
+                            <Skeleton className="w-full h-7" />
+                        </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex flex-row gap-4 items-center">
+                        <CardDescription>
+                            <Skeleton className="w-[8vh] h-5" />
+                        </CardDescription>
+                        <div className="flex flex-row -space-x-1 items-center">
+                            <Skeleton className="w-10 h-10 rounded-full" />
+                        </div>
+                    </CardContent>
+                    <CardFooter className="flex justify-between items-center">
+                        <p className="text-xs font-light text-muted-foreground tracking-tight">
+                            <Skeleton className="w-[8vh] h-3" />
+                        </p>
 
-                <main className="flex flex-row gap-2 items-center">
-                    <Button size={"sm"} variant={"default"}>
-                        <MessageCircle />
-                    </Button>
-                    <Button size={"sm"} variant={"outline"}>
-                        <Pen />
-                    </Button>
-                    <Button size={"sm"} variant={"destructive"}>
-                        <Trash2 />
-                    </Button>
-                </main>
-            </CardFooter>
-        </Card>
+                        <main className="flex flex-row gap-2 items-center">
+                            <Button size={"sm"} variant={"default"}>
+                                <MessageCircle />
+                            </Button>
+                            <Button size={"sm"} variant={"outline"}>
+                                <Pen />
+                            </Button>
+                            <Button size={"sm"} variant={"destructive"}>
+                                <Trash2 />
+                            </Button>
+                        </main>
+                    </CardFooter>
+                </Card>
+            </main>
         )
     };
 
