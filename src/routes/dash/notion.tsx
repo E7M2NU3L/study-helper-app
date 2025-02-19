@@ -1,5 +1,6 @@
 import { NotionIcon } from "@/components/dashboard/notion-icon"
 import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
 
 const Notion = () => {
   return (
@@ -15,9 +16,11 @@ const Notion = () => {
             </main>
 
             <div className="relative">
-                <Button variant={"default"} className="relative" size={"sm"}>
-                    <NotionIcon />
-                    Connect
+                <Button variant={"default"} asChild className="relative" size={"sm"}>
+                    <Link to={"/pricing"}>
+                        <NotionIcon />
+                        Connect
+                    </Link>
                 </Button>
             </div>
         </main>

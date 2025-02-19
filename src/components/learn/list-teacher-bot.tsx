@@ -8,6 +8,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { avatars } from "@/config/appwrite";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 import { Skeleton } from "../ui/skeleton";
+import DeleteBotDrawer from "./delete-bot-drawer";
+import { Badge } from "../ui/badge";
+import UpdateBotsSheet from "./update-bots-sheet";
 
 const ListTeacherBot = () => {
     const {data, isLoading} = useBots();
@@ -59,7 +62,8 @@ const ListTeacherBot = () => {
     <main className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
         {data?.map((content, index) => (
             <Card key={index}>
-                <CardHeader>
+                <CardHeader className="relative">
+                    <Badge variant={"default"} className="text-xs absolute top-2 right-2">Active</Badge>
                     <CardTitle>
                         {content?.title as string}
                     </CardTitle>
@@ -96,16 +100,12 @@ const ListTeacherBot = () => {
 
                         <main className="flex flex-row gap-2 items-center">
                             <Button asChild size={"sm"} variant={"default"}>
-                                <Link to={`learn/${content.$id as string}`}>
+                                <Link to={`/learn/${content.$id as string}`}>
                                     <MessageCircle />
                                 </Link>
                             </Button>
-                            <Button size={"sm"} variant={"outline"}>
-                                <Pen />
-                            </Button>
-                            <Button size={"sm"} variant={"destructive"}>
-                                <Trash2 />
-                            </Button>
+                            <UpdateBotsSheet />
+                            <DeleteBotDrawer />
                         </main>
                     </CardFooter>
             </Card>
@@ -115,36 +115,3 @@ const ListTeacherBot = () => {
 }
 
 export default ListTeacherBot;
-
-/*
-$collectionId
-: 
-"6777c7eb002a2310ce0f"
-$createdAt
-: 
-"2025-01-03T12:39:38.698+00:00"
-$databaseId
-: 
-"6777c7a60018b6552e5f"
-$id
-: 
-"6777da8700157f1ed51d"
-$permissions
-: 
-[]
-$updatedAt
-: 
-"2025-01-03T12:39:38.698+00:00"
-description
-: 
-"my physics bot made with 2 books and especially to teach me physics"
-fileUrl
-: 
-['https://cloud.appwrite.io/v1/storage/buckets/6776b…3b17aae5f&project=6776b5c20033b17aae5f&mode=admin']
-title
-: 
-"El Professor Science"
-userId
-: 
-"6776e6fb000c0f32429e"
-*/

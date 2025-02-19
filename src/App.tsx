@@ -18,6 +18,10 @@ import Notion from "./routes/dash/notion"
 import Learn from "./routes/dash/learn"
 import Schedules from "./routes/dash/schedules"
 import Community from "./routes/dash/community"
+import SingleLearner from "./routes/dash/single-learner"
+import Test from "./routes/dash/test"
+import SingleTest from "./routes/dash/single-test"
+import SingleTask from "./routes/dash/single-task"
 
 function App() {
   return (
@@ -42,11 +46,15 @@ function App() {
           <Route element={<Dash />}>
             <Route path="/overview" element={<Overview />} />
             <Route path="/rooms" element={<Rooms />} />
+            <Route path="/test" element={<Test />} /> 
+            <Route path="/test/:id" element={<SingleTest />} /> 
             <Route path="/billing" element={<Billing />} />
             <Route path="/connect-gcalendar" element={<GoogleCalendar />} />
             <Route path="/connect-notion" element={<Notion />} />
             <Route path="/learn" element={<Learn />} />
+            <Route path="/learn/:id" element={<SingleLearner />} />
             <Route path="/schedule" element={<Schedules />} />
+            <Route path="/schedule/:id" element={<SingleTask />} />
             <Route path="/community" element={<Community />} />
           </Route>
         </Routes>

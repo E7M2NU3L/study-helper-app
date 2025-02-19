@@ -1,6 +1,5 @@
-import { Plus } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import CreateTest from "@/components/test/create-test"
+import ListTests from "@/components/test/list-tests"
 
 const Rooms = () => {
   return (
@@ -15,10 +14,11 @@ const Rooms = () => {
               </p>
           </main>
 
-          <Button variant={"default"} size={"sm"}>
-              <Plus className="mr-1 h-4 w-4" />
-              Tests
-          </Button>
+          <CreateTest />
+      </main>
+
+      <main>
+        <ListTests />
       </main>
   </div>
   )

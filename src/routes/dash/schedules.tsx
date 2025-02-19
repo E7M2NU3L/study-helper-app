@@ -1,6 +1,5 @@
-import { Plus } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import CreateSchedule from "@/components/schedule/create-schedule"
+import ListSchedule from "@/components/schedule/list-schedule"
 
 const Schedules = () => {
   return (
@@ -15,10 +14,11 @@ const Schedules = () => {
             </p>
         </main>
 
-        <Button variant={"default"} size={"sm"}>
-            <Plus className="mr-1 h-4 w-4" />
-            Schedules
-        </Button>
+        <CreateSchedule />
+    </main>
+
+    <main>
+        <ListSchedule />
     </main>
 </div>
   )

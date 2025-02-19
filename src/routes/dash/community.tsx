@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 
 import { Crown, Plus } from "lucide-react"
+import { Link } from "react-router-dom"
 
 const Community = () => {
   return (
@@ -16,9 +17,11 @@ const Community = () => {
             </main>
 
             <div className="relative">
-                <Button variant={"default"} className="relative" size={"sm"}>
+                <Button variant={"default"} asChild className="relative" size={"sm"}>
+                    <Link to={"/pricing"}>
                     <Plus className="mr-1 h-4 w-4" />
                     Community
+                    </Link>
                 </Button>
                 <div className="text-xs absolute -top-2 right-1 font-light text-yellow-500">
                     <Crown className="h-4 w-4" />
